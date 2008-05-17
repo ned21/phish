@@ -1,0 +1,218 @@
+body {	
+	background: #ffffe0; /*#fff;*/
+    background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: arial, sans-serif;
+	font-size: 12pt;
+}
+
+img {
+	border: 1px solid black;
+}
+
+a {
+	text-decoration: none;
+	color: #007;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #a00;
+}
+
+.text_center {
+	text-align: center;
+}
+
+.margin_center {
+	margin-right: auto; 
+	margin-left: auto;
+}
+
+.small {
+	font-size: 8pt;
+}
+
+table.picTable {
+	background: #fff7b2;
+	border-color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	margin-right: auto; 
+	margin-left: auto;
+	font-weight: bold;
+}
+
+table.picTable tr.head td,
+table.picTable tr td.head,
+table.picTable tr td.thumb,
+table.picTable tr td.thumbdir,
+table.picTable tr td.curthumb {
+	padding: 6px 6px;
+	border-style: solid;
+	border-color: #000;
+	text-align: center;
+	font-weight: bold;
+	border-width: 0px;
+}
+
+table.picTable tr.head td,
+table.picTable tr td.head {
+	background: #fff;
+	padding: 6px 6px;
+	border-width: 1px;
+	text-align: right;
+}
+
+div.slideshow_menu {
+   position: absolute;
+   top: 10px; 
+   right: 10px; 
+   width: 130px;
+   padding: 2px;
+}
+
+div.slideshow_menu a {
+   text-align: right; 
+   display: block;
+   padding: 2px;
+   font-weight: bold; 
+   text-decoration: none;
+   border-bottom: 1px solid #88B;
+   color: #88B; 
+   background: #000;
+}
+
+div.slideshow_menu select {
+   margin-top: 4px;
+}
+
+div.slideshow_menu a:hover {
+   background: #eee;
+   color: #448;
+}
+
+ul.main_menu {
+	text-align: center;
+	list-style: none;
+	font-size: 12pt;
+	font-weight: bold;
+	margin: 0;
+	width: 300px;
+	vertical-align: middle;
+}
+
+ul.main_menu li {
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+ul.main_menu li a {
+	width: 90%;
+	display: block;
+	text-decoration: none;
+	background: #FFCA65;
+	padding: 1px 0 1px 0;
+}
+
+ul.main_menu li a:hover {
+	background: #FFAD1D;
+	text-decoration: none;
+}
+
+/* Admin page css below here */
+
+div.a_config {
+	border: 1px dotted black;
+	position: absolute;
+	top: 10px;
+	left: 20%;
+	width: 78%;
+	padding: 5px;
+}
+
+div.a_config form {
+	text-align: center;
+}
+
+div.a_config p {
+	padding: 5px;
+}
+
+div.a_config_menu {
+	position: absolute;
+	top: 10px;
+	margin: 0;
+	left: 1%;
+	width: 17%;
+	border: 1px dotted black;
+	padding: 5px;
+}
+
+table.a_config {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.a_config tr td {
+	width: 50%;
+	margin: 0;
+	padding: 4px 15px 4px 15px;
+	text-align: right;
+	font-weight: bold;
+	border: 1px #d66 solid;
+	text-align: left;
+}
+
+
+table.a_config tr td:first-child {
+	border: 1px #aad solid;
+	text-align: right;
+}
+
+table.a_config tr td.blue {
+	border: 1px #aad solid;
+	text-align: right;
+}
+
+h3.a_config {
+	background: #FFFFFF;
+	padding: 1px;
+	text-align: center;
+	font-weight: bold;
+	border: 1px #aaa solid;
+}
+
+ul.config_menu {
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+ul.config_menu li {
+	margin: 0;
+	border-bottom: 1px solid #669;
+}
+
+ul.config_menu li a {
+	display: block; 
+	text-align: center;
+	width:100%; 
+	text-decoration: none;
+	/*background: #FFCA65;*/
+	background: #fff;
+	color: #448;
+	padding: 5px 0 5px 0;
+}
+
+ul.config_menu li a:hover {
+	background: #669;
+	color: #fff;
+	/*background: #FFAD1D;*/
+	text-decoration: none;
+}
