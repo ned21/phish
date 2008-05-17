@@ -31,7 +31,24 @@ function listDir($dir) {
 		
 		//sort photos alphabetically
 		if (isset($rFiles))
-			sort($rFiles);
+			if ($pg['main']['sort_photo'] == 1) {
+                        	$sFiles = array();
+                        	foreach($rFiles as $val) {
+                                	$key = filemtime($val).$val;
+                                	$sFiles[$key] = $val;
+                        	}
+                        	ksort($sFiles);
+                        	// Now copy sFiles back to rFiles using integer indices
+                        	$i=0;
+                        	foreach($sFiles as $val) {
+                                	$rFiles[$i] = $val;
+                                	$i = $i+1;
+                        	}
+			}
+			else {
+				sort($rFiles);
+			}
+
 		if (isset($rDirs)) {
 			//optionally sort directories by file modification time
 			switch ($pg['main']['sort']) {

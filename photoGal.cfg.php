@@ -16,6 +16,7 @@ $pg['main']['filenames'] = 0; //show photo names
 $pg['main']['dimensions'] = 1; //show photo dimensions
 $pg['main']['side_photos'] = 1;
 $pg['main']['sort'] = 1; //directory sorted by creation time (else alphabetical)
+$pg['main']['sort_photo'] = 1; //photos sorted by mtime else alpabetical
 $pg['main']['layout'] = "table";
 $pg['main']['list_with_photo'] = 1;
 $pg['main']['photo_with_table'] = 1;
