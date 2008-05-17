@@ -26,7 +26,9 @@
  * (+ main.inc.php, util.inc.php, admin.inc.php says ned21)
  * Put them in a directory e.g. public_html/photo/ and you will be able
  * view photos in directories with /photo/ (including s-linked directories)
- *
+ * 
+ * $Id$ 
+ * 
  */
 $start_time = getmicrotime();
 

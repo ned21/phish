@@ -1,4 +1,5 @@
 <?php
+/* $Id$ */
 
 function listDir($dir) {
 	//global $dir because we may change it
