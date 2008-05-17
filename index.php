@@ -29,6 +29,38 @@
  */
 $start_time = getmicrotime();
 
+if (isset($_GET['pic'])) {
+   $pic = $_GET['pic'];
+} elseif (isset($_POST['pic'])) {
+   $pic = $_POST['pic'];
+}
+
+$dir = $_GET['dir'];
+$page = $_GET['page'];
+$comment = $_POST['comment'];
+
+if (isset($_GET['action'])) {
+   $action = $_GET['action'];
+} elseif (isset($_POST['action'])) {
+   $action = $_POST['action'];
+}
+
+if (isset($_GET['login_action'])) {
+   $login_action = $_GET['login_action'];
+} elseif (isset($_POST['login_action'])) {
+   $login_action = $_POST['login_action'];
+}
+
+if (isset($_POST['username'])) {
+   $username = $_POST['username'];
+   $password = $_POST['password'];
+}
+
+if (isset($_COOKIE['login'])) {
+   $login = $_COOKIE['login'];
+}
+
+
 //prevent illegal file names
 //and clean up the filenames
 $pic = cleanup($pic);
@@ -188,6 +220,15 @@ switch ($action) {
 echo "<!--Script executed in ".round(getmicrotime() - $start_time, 4)." seconds-->\n";
 echo "</body>\n";
 echo "</html>\n";
+echo "<!-- ";
+echo "\nCOOKIE\n";
+show_array($_COOKIE);
+echo "\nGET\n";
+show_array($_GET);
+echo "\nPOST\n";
+show_array($_POST);
+echo " -->\n";
+# $action = $_GET['action'];
 
 function getmicrotime()
 { 
@@ -293,4 +334,17 @@ function logout() {
 	setcookie("login[user]","", time() - 36000, "", $_SERVER['HTTP_HOST']);
 	setcookie("login[pass]","", time() - 36000, "", $_SERVER['HTTP_HOST']);
 }
+
+
+function show_array($array) {
+    foreach ($array as $value) {
+        if (is_array($value)) {
+            show_array($value);
+        } else {
+            echo $value . "<br>";
+        }
+    }
+} 
+
+
 ?>

@@ -148,11 +148,13 @@ function listout($dir, $maxCols) {
 			echo "      <td class=\"thumbdir\" style=\"width: $width%\">\n".
 				 "        <a href=\"index.php?dir=$temp\">";
 			if ($pg['main']['dirphotos']) {
-				$startDir = getcwd();
-				echo randomImage($dir, $file);
-				chdir($startDir);
+				$img_text = randomImage($dir, $file);
+				if ($img_text == $file)
+					echo "<img src=\"_phish/book.png\" alt=\"folder\" style=\"border: none\" /><br />\n$file";
+				else
+					echo $img_text;
 			} else {
-				echo "<img src=\"_phish/folder.png\" /><br />\n$file";
+				echo "<img src=\"_phish/book.png\" alt=\"folder\" style=\"border: none\" /><br />\n$file";
 			}
 			echo "</a>\n".
 				 "      </td>\n";
@@ -226,8 +228,8 @@ function listout($dir, $maxCols) {
 				"        ".sizeOf($pg['photos'])." photos\n".
 				"      </td>\n".
 				"      <td colspan=\"".($maxCols-1)."\">\n".
-				"        <a href=\"index.php?action=slideshow&amp;dir=$dir\" style=\"margin: 0; padding-right: 7px; border-right: 1px solid black;\">Slideshow</a>\n".
-				"        <a href=\"index.php?action=tar_dir&amp;dir=$dir\" style=\"margin: 0; padding-right: 4px; padding-left: 3px\">Download these photos</a>\n".
+				"        <a href=\"index.php?action=slideshow&amp;dir=$dir\" style=\"margin: 0; padding-right: 7px; \">Slideshow</a>\n".
+//				"        <a href=\"index.php?action=tar_dir&amp;dir=$dir\" style=\"margin: 0; padding-right: 4px; padding-left: 3px\">Download these photos</a>\n".
 				"      </td>\n".
 				"    </tr>\n";
 	}
@@ -388,10 +390,8 @@ function randomImage($basedir, $dir)
 				$fileList = photoList(getcwd()."/$basedir/$dir/".$dirList[$n]);
 				if (!empty($fileList))
 				{
-					//chdir($dirList[$n]);
 					//if there are photos here, return a thumbnail
 					$picnum = rand(0, sizeof($fileList) - 1);
-					//chdir($start);
 					generate_thumb("./$basedir/$dir/".$dirList[$n], $fileList[$picnum]);
 					return image_holder("./$basedir/$dir/".$dirList[$n], $fileList[$picnum], ($pg['main']['dirnames'] ? $dir : ''));
 				} 
@@ -402,14 +402,12 @@ function randomImage($basedir, $dir)
 					unset($dirList[$max-1]);
 					if ($max == 0)
 					{
-						//chdir($start);
 						return $dir;
 					}
 				}
 			}
 		}
 	}
-	//chdir($start);
 	return $dir;
 }
 
@@ -446,16 +444,16 @@ function options() {
 			"        Photo page style: \n";
 	echo 	"      <input type=\"radio\" name=\"new[layout]\" value=\"table\" ".($pg['main']['layout'] == "table" ? "checked=\"checked\"" : "")." /> Table \n".
 			"      <input type=\"radio\" name=\"new[layout]\" value=\"flat\" ".($pg['main']['layout'] == "flat" ? "checked=\"checked\"" : "")." /> Flat (show all) \n".
-			"	</p>".
-			"<input type=\"submit\" value=\"Set options\" />\n".
+			"	</p>";
+	echo	"	<p>\n".
+			"		 Show thumbnail photo for each directory: \n".
+		 	"      <input type=\"radio\" name=\"new[dirphotos]\" value=\"1\" ".($pg['main']['dirphotos'] == 1 ? "checked=\"checked\"" : "")." /> Yes \n".
+			"      <input type=\"radio\" name=\"new[dirphotos]\" value=\"0\" ".($pg['main']['dirphotos'] == 0 ? "checked=\"checked\"" : "")." /> No \n".
+			"	</p>\n";
+			
+	echo	"<input type=\"submit\" value=\"Set options\" />\n".
 			"</form>\n";
 	echo "</div>\n";
-	//should rewrite all this
-	//allow user change of:
-	//	columns
-	//	max photo size
-	//	layout
-	//	dir photos
 }
 
 function about_page() {

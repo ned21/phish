@@ -59,7 +59,7 @@ function listDir($dir) {
 		$pic = $rFiles[$pic_index];
 	}
 	
-	$pic_index = ($pic_index + sizeOf($rFiles)) % sizeOf($rFiles);
+	// $pic_index = ($pic_index + sizeOf($rFiles)) % sizeOf($rFiles);
 	if (!isset($pic_index) || $rFiles[$pic_index] != $pic)
 		$pic_index = array_search($pic, $rFiles);
 	
@@ -244,6 +244,9 @@ function new_comment($comment, $dir, $pic) {
 	global $pg;
 	if (!$pg['admin']['allow_comments']) 
 		return;
+// Silently ignore comments with http in to screw the link spammers
+   if (preg_match("/http/", $comment))
+      return;
 	if (($comment = trim($comment)) != '') {
 		$comment_file = "/cache/$dir/$pic.nfo";
 		if ($fd = @fopen(getcwd().$comment_file, "a")) {
@@ -254,7 +257,7 @@ function new_comment($comment, $dir, $pic) {
 		if ($pg['admin']['comment_notify']) {
 			$bar = substr($dir, strrpos($dir, '/')+1).$pic;
 			$mail = "AUTO GENERATED E-MAIL by ".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-			$mail .= "\n\nNew comment at ".str_replace(" ", "%20", "\"{$pg['HTTP_root']}"."index.php?pic=$dir/$pic\"")." added at ";
+			$mail .= "\n\nNew comment at ".str_replace(" ", "%20", "\"{$pg['HTTP_root']}"."index.php?pic=$file\"")." added at ";
 			$mail .= date("D M j G:i:s")."\n\nComment : \"$comment\"";
 			$mail = stripslashes($mail);
 			$params = 	"From: {$pg['owner']['name']}'s photo gallery <{$pg['admin']['email']}>\r\n";

@@ -8,6 +8,9 @@ function admin($page) {
 	
 	//if there's an update, perform it
 	global $update, $update_text;
+   if (isset($_GET['update'])) {
+      $update = $_GET['update'];
+   }
 	if (isset($update) && function_exists($update."_update")) {
 		$update .= "_update";
 		$update_text = '';
