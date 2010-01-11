@@ -39,6 +39,7 @@ if (isset($_GET['pic'])) {
 }
 
 $dir = $_GET['dir'];
+$pic_index = $_GET['pic_index'];
 $page = $_GET['page'];
 $comment = $_POST['comment'];
 
