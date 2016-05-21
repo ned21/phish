@@ -163,7 +163,8 @@ function admin_look_page() {
 			new pg_setting ("['main']['layout']",						"radio", 	"Photo page layout",					array('table'=>'Table', 'flat'=>'Flat (show all)')),
 			new pg_setting ("['main']['photo_with_table']",				"radio", 	"Show table behind photo",				$on_off),
 			new pg_setting ("['main']['list_with_photo']", 				"radio", 	"Photo listings when viewing photo",	$on_off),
-			new pg_setting ("['main']['sort']", 						"select", 	"Sorting", 								$sorting),
+			new pg_setting ("['main']['sort']", 						"select", 	"Directory Sorting", 								$sorting),
+			new pg_setting ("['main']['sort_photo']",                                             "select",       "Photo Sorting",                                                            $sorting),
 			new pg_setting ("['admin']['header']",						"text", 	"Page header file"),
 			new pg_setting ("['admin']['footer']",						"text", 	"Page footer file"),
 			new pg_setting ("['css']['body']['background-image']",		"text", 	"Background image")
