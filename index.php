@@ -27,7 +27,7 @@
  * Put them in a directory e.g. public_html/photo/ and you will be able
  * view photos in directories with /photo/ (including s-linked directories)
  * 
- * $Id$ 
+ * This code is now hosted at: https://github.com/ned21/phish
  * 
  */
 $start_time = getmicrotime();

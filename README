@@ -1,0 +1,24 @@
+Pretty Helpful Image Sorting Hierarchy
+
+Copyright (C) 2002 Kyle Maddison
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+This program comes with ABSOLUTELY NO WARRANTY. It should not cause
+any harm to anything when used properly. For details on how to use
+it properly, write the docs.
+
+To install you need the files: index.php, photoGal.cfg.php, main.css
+main.inc.php, util.inc.php, admin.inc.php
+Put them in a directory e.g. public_html/photo/ and you will be able
+view photos in directories with /photo/ (including symlinked directories).
