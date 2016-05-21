@@ -23,6 +23,7 @@
  * it properly, write the docs.
  *
  * To install you need the files index.php, photoGal.cfg.php, main.css
+ * (+ main.inc.php, util.inc.php, admin.inc.php says ned21)
  * Put them in a directory e.g. public_html/photo/ and you will be able
  * view photos in directories with /photo/ (including s-linked directories)
  *
