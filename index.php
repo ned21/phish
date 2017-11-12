@@ -134,7 +134,6 @@ echo    "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org
 		"<head>\n".
 		"	<meta name=\"keywords\" content=\"photos, html, xhtml, php, gallery\" />\n".
 		"	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n".
-		"	<script src=\"script.js\"></script>\n".
 		"	<link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\" />\n";
 
 //auto exit admin after 10 minutes of inactivity
