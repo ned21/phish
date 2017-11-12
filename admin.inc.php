@@ -1,4 +1,4 @@
-<?
+<?php
 /*
  *	Creates admin pages, performs updates, and creates the divs which the pages live in
  */

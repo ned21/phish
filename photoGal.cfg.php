@@ -1,5 +1,4 @@
-<?
-/*phish Configuration file*/
+<?php /*phish Configuration file*/
 
 $pg['owner']['name'] = "Your Name";
 $pg['owner']['message'] = "Your messages here.";

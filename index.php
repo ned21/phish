@@ -277,8 +277,7 @@ function admin_login() { ?>
 			</tr>
 		</table>
 		<input type="submit" value="Login" />
-	</form> <?
-}
+	</form> <?php }
 
 function login() {
 	global $login, $username, $password, $admin;
