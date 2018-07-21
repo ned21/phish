@@ -184,7 +184,7 @@ function listout($dir, $maxCols) {
 					echo "      <td class=\"thumb\" style=\"width:$width%\">\n";	
 
 				echo "        <a href=\"index.php?pic=$dir/$file&pic_index=$num\">";
-				echo image_holder($dir, $file, ($pg['main']['show_file_names'] ? $file : ''));
+				echo image_holder($dir, $file, ($pg['main']['filenames'] ? $file : ''));
 				echo "</a>\n";
 
 				if ($pg['main']['dimensions']) {

@@ -47,6 +47,8 @@ if (isset($_GET['action'])) {
    $action = $_GET['action'];
 } elseif (isset($_POST['action'])) {
    $action = $_POST['action'];
+} else {
+   $action = "";
 }
 
 if (isset($_GET['login_action'])) {
@@ -187,7 +189,7 @@ if ($action == "slideshow") {
 		echo "	</style>\n";
 	}
 }
-echo	"	<title>{$pg[owner][name]}'s photo gallery - $dir</title>\n".
+echo	"	<title>{$pg['owner']['name']}'s photo gallery - $dir</title>\n".
 		"</head>\n";
 if ($action == 'slideshow')
 	echo "<body onload=\"slideshow_start('".addslashes($dir)."', ".$pg['main']['slideshow_time'].");\">\n";

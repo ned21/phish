@@ -5,7 +5,7 @@ $pg['owner']['message'] = "Your messages here.";
 
 $pg['pic_formats'] = array('jpg', 'jpeg');
 $pg['film_formats'] = array('avi', 'mpg');
-//$pg['HTTP_root'] = "http://".$_SERVER['HTTP_HOST'].substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/')+1);
+$pg['HTTP_root'] = "http://".$_SERVER['HTTP_HOST'].substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/')+1);
 
 $pg['main']['columns'] = 4; //default columns per page
 $pg['main']['pic_limit'] = 15;

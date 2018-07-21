@@ -131,6 +131,7 @@ function get_dir_links($linkpart, $basedir) {
 	else
 		$dirLinks = $linkpart.'">'.$pg['owner']['name'].'</a>';
 	$arr = explode('/', $basedir);
+	$allDir = "";
 	for($i=0; $i<sizeOf($arr); $i++) {
 		$cur = $arr[$i];
 		if (strlen($cur) > 0) {
@@ -138,7 +139,7 @@ function get_dir_links($linkpart, $basedir) {
 				$cur = substr($cur, 1);
 			}
 			$allDir .= $cur.'/';
-				$dirLinks .= ' - '.$linkpart.$allDir.'">'.$cur.'</a>';
+			$dirLinks .= ' - '.$linkpart.$allDir.'">'.$cur.'</a>';
 		}
 	}
 	return $dirLinks;
